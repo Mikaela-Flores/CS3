@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Formative Assessment 6 - Flores</title>
+		
+		<style>
+			body{
+				font-size:25px;
+			}
+
+			#firstlink:active{
+				background-color:orange;
+				color:black;
+			}
+			
+			#div1:target{
+				background-color:navy;
+				color:yellow;		
+			}
+			
+			#secondlink:active{
+				background-color:orange;
+				color:black;
+				#firstlink{
+					background-color:green;
+					color:white;
+				}
+			}
+			
+			#div2:target{
+				background-color:turquoise;
+				color:orange;
+				border: 10px dotted green;
+			}
+			
+			
+			#firstlink{
+				text-decoration:none;
+				background-color:navy;
+				color:white;
+			}
+
+			#secondlink{
+				text-decoration:none;
+				background-color:turquoise;
+				color:white;
+			}
+			
+			#div1{
+				border:2px solid black;
+				height:100px;
+				width:100px;
+			}
+			
+			#div2{
+				border: 2px solid black;
+				height: 100px;
+				width:100px;
+			}
+
+			
+
+			#copyright{
+				font-size:16px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<a id="firstlink" href="#div1">First Link</a>
+		<a id="secondlink" href="#div2">Second Link</a>
+		
+		<br>
+		
+		<div id="div1">
+			<p>Div 1 here</p>
+		</div>
+		
+		<br>
+		
+		<div id="div2">
+			<p>Div 2 here</p>
+		</div>
+		
+		<p id="copyright">Copyright&copy MCCFlores</P>
+	</body>
+</html>
+	
