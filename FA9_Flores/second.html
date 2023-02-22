@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	
+		<h1>Baby, baby, you're my sun and moon.</h1>
+		<img id="demo" src="sun.png" width=400px height=400px>
+		
+		<button id="buttonsun" onclick="change();">Sun</button>
+		<button id="buttonmoon" onclick="change2();">Moon</button>
+		
+		<script>
+			function change() {
+				var img = document.getElementById("demo").src = "sun.png";
+			}
+			
+			function change2(){
+				var img2 = document.getElementById("demo").src = "moon.png";
+			}
+		</script>
+	</body>
+</html>
