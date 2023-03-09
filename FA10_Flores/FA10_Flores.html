@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FA10 FLORES</title>
+	</head>
+	<body>
+		<p id="one"></p>
+		<p id="two"></p>
+		
+		<script>
+			var num;
+			var x;
+			var hundred;
+			var ten;
+			var one;
+		
+			var num = Math.floor(Math.random()*1000);
+			var str=num.toString();
+			
+			
+			if (str.length==3){
+				one = str[2];
+				ten = str[1]*10;
+				hundred = str[0]*100;
+			}else if(str.length==2){
+				one = str[1];
+				ten = str[0]*10;
+				hundred = 0;
+			}
+			else{
+				one = str[0];
+				ten = 0;
+				hundred = 0;
+			}
+			
+			document.getElementById("one").innerHTML = "Randomly generated number: " + str + "<br>";
+			document.getElementById("two").innerHTML = "Breakdown of number: " + hundred + ", " + ten + ", " + one;
+		</script>
+	</body>
+</html>
