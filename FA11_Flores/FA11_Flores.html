@@ -10,9 +10,9 @@
 		var second = prompt("Enter the second measurement of the triangle:","");
 		var third = prompt("Enter the third measurement of the triangle:","");
 		
-		determineTriangleType(first, second, third);
+		determineTriangle(first, second, third);
 		
-		function determineTriangleType(a, b, c){
+		function determineTriangle(a, b, c){
 			if (a==b && a==c){
 				alert("The triangle is EQUILATERAL.");
 			}else if (a==b || a==c || b==c){
