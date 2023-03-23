@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Choose Background Color</title>
+		<!-- provide the necessary meta tags -->
+		<meta charset="UTF-8">
+		<meta name="author" content="Mikaels Caresse C. Flores">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="description" content="Choose Background Color"/>
+		<meta name="subject" content="Computer Science">
+		<meta name="copyright"content="MCCFlores_Potassium">
+		<meta name="language" content="EN">
+        <style>
+        	* { box-sizing: border-box; 
+            	font-family: arial; 
+                color: white;
+            }           
+            body {background:navy}
+            ul {
+            	list-style-type: none;
+                width: 100px;
+                padding: 0;
+                border: 1px solid black;
+                background: gray;
+            }
+            li {width: 100%;
+            	border-bottom: 1px solid black;
+                padding: 5px;
+            }
+            li:nth-child(3) {border:none}
+            a {	text-decoration:none;
+            	display:block;
+                width: 100%;
+            }
+            li:nth-child(1):hover {background:purple}
+            li:nth-child(2):hover {background:navy}
+            li:nth-child(3):hover {background:maroon}
+            
+        </style>
+
+	</head>
+	<body>
+		<h2> Choose Background Color </h2>
+        <ul>
+        	<li><a onclick = "purple();" href="#"> Purple </a></li>
+            <li><a onclick = "navy();" href="#"> Navy </a></li>
+            <li><a onclick = "maroon();" href="#"> Maroon </a></li>
+        </ul>
+		<!--Call onclick property per listed color-->
+		
+        <script>
+            /* do not forget to include comments to this script */
+			
+			//call a function to change the background color respectively
+			function purple(){
+				document.body.style.backgroundColor = "purple";
+			}
+			
+			function navy(){
+				document.body.style.backgroundColor = "navy";
+			}
+			
+			function maroon(){
+				document.body.style.backgroundColor = "maroon";
+			}
+        </script>
+	</body>
+</html>
+

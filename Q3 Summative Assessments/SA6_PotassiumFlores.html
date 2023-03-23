@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>One Time Password </title>
+		<!-- provide the necessary meta tags -->
+		<meta charset="UTF-8">
+		<meta name="author" content="Mikaels Caresse C. Flores">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="description" content="One Time Password"/>
+		<meta name="subject" content="Computer Science">
+		<meta name="copyright"content="MCCFlores_Potassium">
+		<meta name="language" content="EN">
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            a {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+	<body onload="generateOTP()">
+		<h1> Final Verification Step </h1>
+		<h2> Current OTP: <span id="otp"> _ _ _ _ _ _ <span> <a href="" onclick="generateOTP()"> New OTP </a></h2>
+		<button onclick="inputOTP()"> Enter the OTP as shown above </button>
+    
+		<script>
+			/* do not forget to include comments in your answer */
+			
+			//generates random otp
+			function generateOTP() {
+				let digits = '0123456789';
+				let Otp = '';
+				for (let i = 0; i < 6; i++){
+					Otp += digits[Math.floor(Math.random()*10)];
+				}
+			
+				document.getElementById("otp").innerHTML = Otp; //displays current otp
+			}
+			//compares input otp with current otp
+			function inputOTP() {
+				let inputO = prompt("Enter current OTP:");
+				let currentO = document.getElementById("otp").innerHTML;
+			
+				//comparing stage 
+				if (inputO === currentO) {
+						window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ"); 
+				} else {
+						alert("Your OTP is incorrect. Try again.");
+						generateOTP();
+				}
+			}
+			
+		</script>
+	</body>
+</html>
+

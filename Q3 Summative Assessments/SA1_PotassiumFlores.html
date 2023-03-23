@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Toss coin</title>
+		<!-- provide the necessary meta tags -->
+        <meta charset="UTF-8">
+		<meta name="author" content="Mikaels Caresse C. Flores">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="description" content="Toss Coin"/>
+		<meta name="subject" content="Computer Science">
+		<meta name="copyright"content="MCCFlores_Potassium">
+		<meta name="language" content="EN">
+        <style>
+        	body {background: navy; 
+            	text-align: center;
+            	font-family: arial;
+                color: white;
+            }
+            button {padding: 10px; background:violet }
+            span {color: yellow}
+            #coin, h5 {color: yellow; }
+            #coin { background: gray; 
+            	width: 25px; 
+                height: 25px;
+                padding: 25px;          
+                border: 5px dashed darkgray;
+                border-radius: 50%;
+                margin: 0 auto;
+                
+            }
+            
+        </style>
+
+	</head>
+	<body onload="getGuess()">
+        <h1> Heads or Tail? </h1>
+        <h2 onclick="getGuess()"> Click here to change your Guess: <span id="guess"> </span></h2>
+        <h2 id="coin" onclick="flipCoin()"> H </span></h2>  
+            <!--do not forget to include comments to this script -->
+        <h5> Click on the coin above to randomly change its face and compare with your guess </h5> 
+        <script>
+            /* do not forget to include comments to this script */
+			
+            var getGuess = function() {
+                uGuess = prompt("Type H for head and T for tail","H");
+                uGuess.toUpperCase; // converting to an uppercase letter
+                (uGuess != "H" && uGuess != "T") ?	alert("Wrong Input"):
+                    guess.innerHTML = uGuess;
+            }
+			
+			var flipCoin = function() {
+				var coin = document.getElementById("coin"); //assigning for element return
+				var rand = Math.random(); //randomizing numbers to assign specified value
+				
+				//conditioning to asign and randomize h and t selections for the coin
+				if (rand < 0.25) {
+					coin.innerHTML = "H";
+				} else if (rand < 0.5) {
+					coin.innerHTML = "T";
+				} else if (rand < 0.75) {
+					coin.innerHTML = "H";
+				} else {
+					coin.innerHTML = "T";
+				}
+				
+				//check or compare guess to randomized result
+				var guess = document.getElementById("guess");
+				var userGuess = guess.innerHTML;
+				var coinFace = coin.innerHTML;
+
+				if (userGuess === coinFace) {
+					alert("Your guess is correct!");
+				} else {
+					alert("Your guess is incorrect.");
+				}
+			}
+        </script>
+	</body>
+</html>
