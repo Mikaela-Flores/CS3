@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Q4 AA2 Flores</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+      form {
+        width: 50%;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+      }
+      fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+      legend {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease-in-out;
+      }
+      input[type="text"]:focus,
+      input[type="password"]:focus,
+      input[type="email"]:focus,
+      textarea:focus {
+        border-color: green;
+        outline: none;
+      }
+      input[type="text"]:invalid,
+      input[type="password"]:invalid,
+      input[type="email"]:invalid,
+      textarea:invalid {
+        border-color: red;
+      }
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease-in-out;
+      }
+      select:focus {
+        border-color: green;
+        outline: none;
+      }
+      select:invalid {
+        color: gray;
+      }
+      button[type="submit"],
+      button[type="reset"] {
+        display: inline-block;
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+      button[type="submit"]:hover,
+      button[type="reset"]:hover {
+        background-color: #3e8e41;
+      }
+      #output {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      #output h2 {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      #output p {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form onsubmit="sHowoutput()">
+      <fieldset>
+        <legend>Sign-up Form</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+		<label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+			<option value="">-- Please select --</option>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+			<option value="prefer-not-to-mention">Prefer not to mention</option>
+        </select>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <label for="email">Email address:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+        <label for="interest">Your interests:</label>
+        <textarea id="interest" name="interest" required></textarea>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </fieldset>
+    </form>
+	<div id="output"></div>
+    <script>
+		let inputs = document.querySelectorAll("input, textarea, select");
+		inputs.forEach(input => {
+		input.addEventListener("focus", () => {
+			input.style.borderColor = "blue";
+        });
+        input.addEventListener("blur", () => {
+			if (input.validity.valid) {
+				input.style.borderColor = "green";
+			} else {
+				input.style.borderColor = "red";
+			}
+			});
+		});
+	  
+		function sHowoutput() {
+			var name = document.getElementById("name").value;
+			var username = document.getElementById("username").value;
+			var gender = document.getElementById("gender").value;
+			var password = document.getElementById("password").value;
+			var email = document.getElementById("email").value;
+			var address = document.getElementById("address").value;
+			var interest = document.getElementById("interest").value;
+
+			var outputHTML = "Thank you for signing up! Here is the information you provided:<br>"+ 
+			"Name: " + name + "<br>" +
+			"Username: " + username + "<br>" +
+			"Gender: " + gender + "<br>" +
+			"Password: " + password + "<br>" +
+			"Email: " + email + "<br>" +
+			"Address: " + address + "<br>" +
+			"Interest: " + interest;
+			
+			document.getElementById("output").innerHTML = outputHTML;
+			return false;
+			
+		}
+      
+    </script>
+		
+  </body>
+</html>
+
